@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma" />
   </p>
 
-  <img src="screenshots/dashboard.png" alt="Dashboard Preview" width="100%" />
+  <img src="https://github.com/user-attachments/assets/98720cef-0e34-4bf1-b9fa-03b32761d04e" alt="Dashboard Preview" width="100%" />
 
 </div>
 
@@ -52,7 +52,7 @@
   <tr>
     <td width="50%">
       <h3 align="center">Analytics Dashboard</h3>
-      <img src="screenshots/dashboard.png" alt="Dashboard" />
+      <img src="https://github.com/user-attachments/assets/bc21d077-e05b-4664-9209-df298eb0e960"  alt="Dashboard" />
     </td>
     <td width="50%">
       <h3 align="center">Content Scheduler</h3>
