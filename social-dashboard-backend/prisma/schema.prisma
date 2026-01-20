@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String          @id @default(uuid())
+  email          String          @unique
+  password_hash  String
+  created_at     DateTime        @default(now())
+  
+  // Relations
+  socialAccounts SocialAccount[]
+  posts          Post[]
+}
+
+model SocialAccount {
+  id            String   @id @default(uuid())
+  user_id       String
+  platform_name String   // e.g., "twitter", "instagram"
+  access_token  String
+  refresh_token String?
+  handle        String?  // The username/handle on the platform
+  
+  // Relations
+  user          User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@unique([user_id, platform_name]) // A user generally links one account per platform
+}
+
+model Post {
+  id             String    @id @default(uuid())
+  user_id        String
+  content        String
+  scheduled_time DateTime?
+  status         PostStatus @default(DRAFT)
+  platform_ids   String[]  // Array of strings representing target platform IDs (or SocialAccount IDs)
+  
+  // Relations
+  user           User      @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  analytics      Analytics[]
+}
+
+model Analytics {
+  id          String   @id @default(uuid())
+  post_id     String
+  likes       Int      @default(0)
+  shares      Int      @default(0)
+  comments    Int      @default(0)
+  impressions Int      @default(0)
+  recorded_at DateTime @default(now())
+
+  // Relations
+  post        Post     @relation(fields: [post_id], references: [id], onDelete: Cascade)
+}
+
+enum PostStatus {
+  DRAFT
+  SCHEDULED
+  PUBLISHED
+  FAILED
+}

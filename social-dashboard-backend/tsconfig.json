@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2020",             /* Modern JavaScript features */
+    "module": "commonjs",           /* Standard Node.js module system */
+    "rootDir": "./src",             /* Where your TypeScript files live */
+    "outDir": "./dist",             /* Where compiled JavaScript goes */
+    "strict": true,                 /* Enable strong type checking */
+    "esModuleInterop": true,        /* compatibility with commonjs modules */
+    "skipLibCheck": true,           /* Skip type checking of declaration files */
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],          /* Include everything in src folder */
+  "exclude": ["node_modules"]       /* Don't compile external libraries */
+}
