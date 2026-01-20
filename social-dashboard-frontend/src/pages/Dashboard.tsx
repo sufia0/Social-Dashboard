@@ -88,7 +88,7 @@ export const Dashboard = () => {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <StatCard icon={<Users className="text-blue-500" />} label="Total Followers" value={stats?.totalFollowers || 0} />
+          <StatCard icon={<Users className="text-blue-500" />} label="Total Followers" value="1250" || 0} />
           <StatCard icon={<Heart className="text-red-500" />} label="Total Likes" value={stats?.totalLikes || 0} />
           <StatCard icon={<Share2 className="text-green-500" />} label="Total Shares" value={stats?.totalShares || 0} />
           <StatCard icon={<BarChart3 className="text-purple-500" />} label="Engagement Rate" value={stats?.engagementRate || "0%"} />
@@ -123,4 +123,5 @@ const StatCard = ({ icon, label, value }: { icon: React.ReactNode, label: string
       <h3 className="text-2xl font-bold">{value}</h3>
     </div>
   </div>
+
 );
