@@ -41,7 +41,7 @@ export const Schedule = () => {
   const handleSchedule = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('http://social-dashboard-kiz4.onrender.com/api/posts', 
+      await axios.post('https://social-dashboard-kiz4.onrender.com/api/posts', 
         { content, platform, scheduledFor: date },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -155,3 +155,4 @@ export const Schedule = () => {
   );
 
 };
+
