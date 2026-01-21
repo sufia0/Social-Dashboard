@@ -56,20 +56,24 @@
     </td>
     <td width="50%">
       <h3 align="center">Content Scheduler</h3>
-      <img src="screenshots/schedule.png" alt="Scheduler" />
+      <img src="https://github.com/user-attachments/assets/53da727e-f1b9-4b5e-b7bf-ad3b3f3df153" alt="Scheduler" />
     </td>
   </tr>
   <tr>
     <td colspan="2">
       <h3 align="center">Secure Login</h3>
       <div align="center">
-        <img src="screenshots/login.png" alt="Login Page" width="50%" />
+        <img src="https://github.com/user-attachments/assets/899764a9-61a1-499b-8728-627d96296fca" alt="Login Page" width="50%" />
       </div>
     </td>
   </tr>
 </table>
 
 ---
+
+
+### 🚀 Live Link: [Sufi_Dash](https://social-dashboard-vert.vercel.app/)
+
 
 ## ⚙️ Installation & Setup
 
@@ -134,3 +138,5 @@ Commit your Changes (git commit -m 'Add some AmazingFeature')
 Push to the Branch (git push origin feature/AmazingFeature)
 
 Open a Pull Request
+
+
