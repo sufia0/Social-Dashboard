@@ -98,12 +98,24 @@ export const Dashboard = () => {
 
   return (
     <div className="flex h-screen relative overflow-hidden">
-      {/* Animated 3D Background */}
+      {/* Animated 3D Background with Overlapping Text */}
       <div className="fixed inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-pink-900 -z-10">
+        {/* Floating orbs */}
         <div className="absolute top-20 left-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
         <div className="absolute top-40 right-20 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
         <div className="absolute bottom-20 left-40 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
         <div className="absolute bottom-40 right-40 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-6000"></div>
+        
+        {/* Overlapping Text Design */}
+        <div className="absolute inset-0 overflow-hidden opacity-5 select-none pointer-events-none">
+          <div className="absolute top-10 left-10 text-9xl font-black bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent transform -rotate-12 animate-float">ANALYTICS</div>
+          <div className="absolute top-1/4 right-20 text-8xl font-black bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent transform rotate-6 animate-float-delay-2">METRICS</div>
+          <div className="absolute bottom-1/4 left-20 text-9xl font-black bg-gradient-to-r from-pink-300 to-yellow-300 bg-clip-text text-transparent transform -rotate-6 animate-float-delay-4">DATA</div>
+          <div className="absolute bottom-20 right-32 text-7xl font-black bg-gradient-to-r from-green-300 to-emerald-300 bg-clip-text text-transparent transform rotate-12 animate-float-delay-6">INSIGHTS</div>
+          <div className="absolute top-1/2 left-1/3 text-6xl font-black bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent transform -rotate-3 animate-float-delay-3">GROWTH</div>
+        </div>
+
+        {/* Grid pattern overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzBoMnYyaC0ydi0yem0wLThoMnYyaC0ydi0yem0wLThoMnYyaC0ydi0yem0wLThoMnYyaC0yVjZ6bTAtOGgydjJoLTJ2LTJ6bTgtOGgydjJoLTJ2LTJ6bTAtOGgydjJoLTJ2LTJ6bTAtOGgydjJoLTJ2LTJ6bTAtOGgydjJoLTJ2LTJ6bS04IDBoMnYyaC0ydi0yem0tOCAwaDJ2MmgtMnYtMnptLTggMGgydjJoLTJ2LTJ6bS04IDBoMnYyaC0ydi0yem0tOCAwaDJ2MmgtMnYtMnptLTggMGgydjJoLTJ2LTJ6bS04IDBoMnYyaC0ydi0yem0wIDhoMnYyaC0ydi0yem0wIDhoMnYyaC0ydi0yem0wIDhoMnYyaC0ydi0yem0wIDhoMnYyaC0ydi0yem04IDBoMnYyaC0ydi0yem04IDBoMnYyaC0ydi0yem04IDBoMnYyaC0ydi0yem04IDBoMnYyaC0ydi0yem04IDBoMnYyaC0ydi0yem04IDBoMnYyaC0ydi0yem04IDBoMnYyaC0ydi0yem0wLThoMnYyaC0ydi0yem0wLThoMnYyaC0ydi0yem0wLThoMnYyaC0ydi0yem0wLThoMnYyaC0ydi0yeiIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
       </div>
 
@@ -111,18 +123,20 @@ export const Dashboard = () => {
       <aside className="w-64 bg-white/10 backdrop-blur-xl shadow-2xl hidden md:block border-r border-white/20 relative z-10">
         <div className="p-6">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl animate-pulse">
+            <div className="p-2 bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 rounded-xl animate-gradient-rotate">
               <LayoutDashboard className="text-white" size={24} />
             </div>
-            <h1 className="text-2xl font-bold text-white">Sufi_Dash</h1>
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-200 via-pink-200 to-yellow-200 bg-clip-text text-transparent">
+              Sufi_Dash
+            </h1>
           </div>
         </div>
         
         <nav className="mt-6 px-4 space-y-2">
-          <a href="#" className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-purple-500/30 to-pink-500/30 text-white rounded-xl font-medium backdrop-blur-sm border border-white/20 transform hover:scale-105 transition-all">
+          <a href="#" className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-purple-500/30 to-pink-500/30 text-white rounded-xl font-medium backdrop-blur-sm border border-white/20 transform hover:scale-105 transition-all shadow-lg">
             <BarChart3 size={20} /> Overview
           </a>
-          <a href="/schedule" className="flex items-center gap-3 px-4 py-3 text-white/80 hover:bg-white/10 hover:text-white rounded-xl transition-all backdrop-blur-sm border border-transparent hover:border-white/20">
+          <a href="/schedule" className="flex items-center gap-3 px-4 py-3 text-white/80 hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-cyan-500/20 hover:text-white rounded-xl transition-all backdrop-blur-sm border border-transparent hover:border-white/20 hover:scale-105">
             <BarChart3 size={20} /> Schedule
           </a>
         </nav>
@@ -130,7 +144,7 @@ export const Dashboard = () => {
         <div className="absolute bottom-10 left-0 w-full px-6">
           <button 
             onClick={handleLogout} 
-            className="flex items-center gap-2 text-white/80 hover:text-red-400 transition-all px-4 py-2 rounded-xl hover:bg-white/10 w-full backdrop-blur-sm"
+            className="flex items-center gap-2 text-white/80 hover:text-red-400 transition-all px-4 py-2 rounded-xl hover:bg-white/10 w-full backdrop-blur-sm hover:scale-105 transform"
           >
             <LogOut size={20} /> Logout
           </button>
@@ -141,8 +155,10 @@ export const Dashboard = () => {
       <main className="flex-1 p-8 overflow-y-auto relative z-10">
         <header className="flex justify-between items-center mb-8">
           <div>
-            <h2 className="text-4xl font-bold text-white mb-2">Dashboard Overview</h2>
-            <p className="text-purple-200">Welcome back! Here's your performance summary</p>
+            <h2 className="text-5xl font-black bg-gradient-to-r from-purple-200 via-pink-200 to-yellow-200 bg-clip-text text-transparent mb-2 animate-gradient-x">
+              Dashboard Overview
+            </h2>
+            <p className="text-purple-200 text-lg">Welcome back! Here's your performance summary ✨</p>
           </div>
           <button 
             onClick={handleLogout} 
@@ -155,38 +171,40 @@ export const Dashboard = () => {
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <StatCard 
-            icon={<Users className="text-blue-400" size={28} />} 
+            icon={<Users className="text-blue-300" size={32} />} 
             label="Total Followers" 
             value={stats?.totalFollowers || 0}
-            gradient="from-blue-500 to-cyan-500"
+            gradient="from-blue-500 via-cyan-500 to-teal-500"
           />
           <StatCard 
-            icon={<Heart className="text-red-400" size={28} />} 
+            icon={<Heart className="text-red-300" size={32} />} 
             label="Total Likes" 
             value={stats?.totalLikes || 0}
-            gradient="from-red-500 to-pink-500"
+            gradient="from-red-500 via-pink-500 to-rose-500"
           />
           <StatCard 
-            icon={<Share2 className="text-green-400" size={28} />} 
+            icon={<Share2 className="text-green-300" size={32} />} 
             label="Total Shares" 
             value={stats?.totalShares || 0}
-            gradient="from-green-500 to-emerald-500"
+            gradient="from-green-500 via-emerald-500 to-teal-500"
           />
           <StatCard 
-            icon={<TrendingUp className="text-purple-400" size={28} />} 
+            icon={<TrendingUp className="text-purple-300" size={32} />} 
             label="Engagement Rate" 
             value={stats?.engagementRate || "0%"}
-            gradient="from-purple-500 to-violet-500"
+            gradient="from-purple-500 via-violet-500 to-fuchsia-500"
           />
         </div>
 
         {/* Activity Chart */}
         <div className="bg-white/10 backdrop-blur-xl p-8 rounded-3xl shadow-2xl border border-white/20 transform hover:scale-[1.01] transition-all">
           <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl">
-              <BarChart3 className="text-white" size={24} />
+            <div className="p-3 bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 rounded-xl animate-gradient-rotate">
+              <BarChart3 className="text-white" size={28} />
             </div>
-            <h3 className="text-2xl font-bold text-white">Weekly Engagement</h3>
+            <h3 className="text-3xl font-black bg-gradient-to-r from-purple-200 via-pink-200 to-yellow-200 bg-clip-text text-transparent">
+              Weekly Engagement
+            </h3>
           </div>
           
           <div className="h-80 w-full">
@@ -227,18 +245,18 @@ export const Dashboard = () => {
                   type="monotone" 
                   dataKey="views" 
                   stroke="#8b5cf6" 
-                  strokeWidth={3} 
-                  dot={{ fill: '#8b5cf6', r: 5 }} 
-                  activeDot={{ r: 8, fill: '#a78bfa' }}
+                  strokeWidth={4} 
+                  dot={{ fill: '#8b5cf6', r: 6 }} 
+                  activeDot={{ r: 10, fill: '#a78bfa' }}
                   fill="url(#colorViews)"
                 />
                 <Line 
                   type="monotone" 
                   dataKey="likes" 
                   stroke="#ec4899" 
-                  strokeWidth={3} 
-                  dot={{ fill: '#ec4899', r: 5 }}
-                  activeDot={{ r: 8, fill: '#f472b6' }}
+                  strokeWidth={4} 
+                  dot={{ fill: '#ec4899', r: 6 }}
+                  activeDot={{ r: 10, fill: '#f472b6' }}
                   fill="url(#colorLikes)"
                 />
               </LineChart>
@@ -247,7 +265,6 @@ export const Dashboard = () => {
         </div>
       </main>
 
-      {/* Removed jsx attribute from style tag */}
       <style>{`
         @keyframes blob {
           0%, 100% {
@@ -258,6 +275,38 @@ export const Dashboard = () => {
           }
           66% {
             transform: translate(-20px, 20px) scale(0.9);
+          }
+        }
+
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) rotate(-12deg);
+          }
+          50% {
+            transform: translateY(-30px) rotate(-12deg);
+          }
+        }
+
+        @keyframes gradient-x {
+          0%, 100% {
+            background-size: 200% 200%;
+            background-position: left center;
+          }
+          50% {
+            background-size: 200% 200%;
+            background-position: right center;
+          }
+        }
+
+        @keyframes gradient-rotate {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
           }
         }
 
@@ -276,6 +325,40 @@ export const Dashboard = () => {
         .animation-delay-6000 {
           animation-delay: 6s;
         }
+
+        .animate-float {
+          animation: float 8s ease-in-out infinite;
+        }
+
+        .animate-float-delay-2 {
+          animation: float 8s ease-in-out infinite;
+          animation-delay: 1.5s;
+        }
+
+        .animate-float-delay-3 {
+          animation: float 8s ease-in-out infinite;
+          animation-delay: 2s;
+        }
+
+        .animate-float-delay-4 {
+          animation: float 8s ease-in-out infinite;
+          animation-delay: 2.5s;
+        }
+
+        .animate-float-delay-6 {
+          animation: float 8s ease-in-out infinite;
+          animation-delay: 3s;
+        }
+
+        .animate-gradient-x {
+          background-size: 200% auto;
+          animation: gradient-x 3s ease infinite;
+        }
+
+        .animate-gradient-rotate {
+          background-size: 200% 200%;
+          animation: gradient-rotate 3s ease infinite;
+        }
       `}</style>
     </div>
   );
@@ -292,16 +375,23 @@ const StatCard = ({
   value: string | number;
   gradient: string;
 }) => (
-  <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-xl border border-white/20 transform hover:scale-105 transition-all hover:shadow-2xl group">
-    <div className="flex items-center gap-4">
-      <div className={`p-4 bg-gradient-to-br ${gradient} rounded-xl shadow-lg group-hover:animate-pulse`}>
-        {icon}
+  <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-xl border border-white/20 transform hover:scale-105 transition-all hover:shadow-2xl group relative overflow-hidden">
+    {/* Animated gradient overlay */}
+    <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+    
+    <div className="relative z-10">
+      <div className="flex items-center gap-4 mb-3">
+        <div className={`p-4 bg-gradient-to-br ${gradient} rounded-xl shadow-lg group-hover:scale-110 transition-transform`}>
+          {icon}
+        </div>
+        <div className="flex-1">
+          <p className="text-purple-200 text-sm font-semibold mb-1 uppercase tracking-wide">{label}</p>
+          <h3 className="text-4xl font-black bg-gradient-to-r from-white to-purple-100 bg-clip-text text-transparent">
+            {value}
+          </h3>
+        </div>
       </div>
-      <div>
-        <p className="text-purple-200 text-sm font-medium mb-1">{label}</p>
-        <h3 className="text-3xl font-bold text-white">{value}</h3>
-      </div>
+      <div className={`h-1.5 bg-gradient-to-r ${gradient} rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500`}></div>
     </div>
-    <div className={`mt-4 h-1 bg-gradient-to-r ${gradient} rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left`}></div>
   </div>
 );
