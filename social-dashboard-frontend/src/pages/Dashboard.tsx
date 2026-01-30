@@ -127,7 +127,7 @@ export const Dashboard = () => {
               <LayoutDashboard className="text-white" size={24} />
             </div>
             <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-200 via-pink-200 to-yellow-200 bg-clip-text text-transparent">
-              Sufi_Dash
+              Socio_Dash
             </h1>
           </div>
         </div>
@@ -395,3 +395,4 @@ const StatCard = ({
     </div>
   </div>
 );
+
